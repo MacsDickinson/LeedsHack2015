@@ -4,11 +4,13 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using GroundJobs.ServiceBus;
 
 namespace GroundJobs.Services.FoodServices
 {
-    public class ClosestGooglePlaceRequest : ClosestEateryRequest
+    public class ClosestGooglePlaceRequest : IServiceRequest<PostCodeSearchCommand>
     {
+        public PostCodeSearchCommand Command { get; set; }
         public string APIKey { get; set; }
         public List<EateryType> Types { get; set; }
         public string Name { get; set; }
