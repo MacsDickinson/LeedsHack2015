@@ -12,11 +12,12 @@ namespace GroundJobs.Services.FoodServices
     {
         public PostCodeSearchCommand Command { get; set; }
         public string APIKey { get; set; }
-        public List<EateryType> Types { get; set; }
-        public string Name { get; set; }
         public string PostCode { get; set; }
         public float Latitude { get; set; }
         public float Longitude { get; set; }
+        public List<EateryType> Types { get; set; }
+        public List<string> Names { get; set; }
+        public string Keyword { get; set; }
 
         public List<ClosestGooglePlaceResponse> Get()
         {
@@ -33,8 +34,9 @@ namespace GroundJobs.Services.FoodServices
             }
 
             var types = Types.Aggregate("", (current, type) => current + (type + "|"));
+            var names = Names.Aggregate("", (current, type) => current + (type + " "));
 
-            var googlePlacesResponse = GetResponseString($"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={Latitude},{Longitude}&radius=500&types={types}&name={Name}&key={APIKey}");
+            var googlePlacesResponse = GetResponseString($"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={Latitude},{Longitude}&radius=500&types={types}&name={names}&keyword={Keyword}&key={APIKey}");
             googlePlacesResponse.Wait();
             var googlePlaces = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(googlePlacesResponse.Result);
 
@@ -161,6 +163,5 @@ namespace GroundJobs.Services.FoodServices
         veterinary_care,
         zoo,
     }
-
     
 }
