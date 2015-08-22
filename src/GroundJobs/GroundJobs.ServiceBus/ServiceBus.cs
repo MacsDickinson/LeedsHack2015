@@ -2,12 +2,8 @@
 
 namespace GroundJobs.ServiceBus
 {
-    /// <summary>
-    /// This ServiceBus will (eventually) execute commands async
-    /// Do the following to use it:
-    ///     Create a "Command" by implementing ICommand<T>
-    ///     Execute the command by using ServiceBus.Instance.Publish(command);
-    /// </summary>
+    // This project can output the Class library as a NuGet Package.
+    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
     public class ServiceBus
     {
         public static readonly ServiceBus Instance = new ServiceBus();
@@ -28,10 +24,8 @@ namespace GroundJobs.ServiceBus
         public object Command;
     }
 
-    public interface ICommand<T>
+    public interface ICommand<in T>
     {
-        T Data { get; set; }
-
-        void Execute();
+        void Execute(T data);
     }
 }
