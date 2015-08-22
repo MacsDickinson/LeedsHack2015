@@ -1,0 +1,11 @@
+
+
+    #!/bin/sh
+    #
+    # An example hook script that is called after a successful
+    # commit is made.
+    #
+    # To enable this hook, rename this file to "post-commit".
+
+
+    curl -d "output=`git show  --format='git&message=%s&user=14&secret=tENU5doyolosEL3CAebG&files='  --name-only HEAD`"  http://hackinabox.org/commits
