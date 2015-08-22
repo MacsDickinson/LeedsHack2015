@@ -12,7 +12,7 @@
             float latitude = float.Parse(postcode.result.latitude.ToString());
             float longitude = float.Parse(postcode.result.longitude.ToString());
             const string googleAPIKey = "AIzaSyCM_pHgWShJwu4sYj_M79lDQ6Tpw9zV_9k";
-            var storesData = GetHTMLString($"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius=500&types={request.Type}&key={googleAPIKey}");
+            var storesData = GetHTMLString($"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius=500&types={request.Type}&name={request.Name}&key={googleAPIKey}");
             storesData.Wait();
             var googlePlaces = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(storesData.Result);
 
