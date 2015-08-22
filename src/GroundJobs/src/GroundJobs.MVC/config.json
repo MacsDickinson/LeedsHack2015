@@ -15,6 +15,14 @@
         "MicrosoftAccount": {
             "ClientId": "0000000048167A41",
             "ClientSecret": "NOmiXaWkhs2-RZT6BbqqSoxGMxf7OtPT"
+        },
+        "Google": {
+            "ClientId": "44513372866-a907glcbo9be8lmt4vlupf0794ffr828.apps.googleusercontent.com",
+            "ClientSecret": "6gn4gF05XGqnQ3HATHsfaLMt"
+        },
+        "Twitter": {
+            "ConsumerKey": "XotXAZwI2ESiG4C3RvJZcRNct",
+            "ConsumerSecret": "RsEkHbtnyfJpho4alkMRuvXfDek12Es74ux5CeYx7PhkEYkRdL"
         }
     }
 }
