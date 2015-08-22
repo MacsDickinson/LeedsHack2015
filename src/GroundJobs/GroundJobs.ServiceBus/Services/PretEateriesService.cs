@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace GroundJobs.ServiceBus
+namespace GroundJobs.ServiceBus.Services
 {
     public static class StringExtensions
     {
@@ -59,14 +58,9 @@ namespace GroundJobs.ServiceBus
         }
     }
 
-    public class GetEateriesCommand : ICommand
+    public class GetEateriesResponse : IServiceResponse<PostCodeSearchCommand>
     {
-        public string Postcode;
-    }
-
-    public class GetEateriesResponse : IServiceResponse<GetEateriesCommand>
-    {
-        public GetEateriesCommand Command { get; private set; }
+        public PostCodeSearchCommand Command { get; private set; }
         public float Distance;
         public string LocationName;
     }
@@ -88,8 +82,8 @@ namespace GroundJobs.ServiceBus
         }
     }
 
-    public class GetEateriesRequest : IServiceRequest<GetEateriesCommand>
+    public class GetEateriesRequest : IServiceRequest<PostCodeSearchCommand>
     {
-        public GetEateriesCommand Command { get; set; }
+        public PostCodeSearchCommand Command { get; set; }
     }
 }
