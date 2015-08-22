@@ -9,6 +9,7 @@ namespace GroundJobs.Services.FoodServices
     public class ClosestGooglePlaceRequest : ClosestEateryRequest
     {
         public EateryType Type { get; set; }
+        public string Name { get; set; }
     }
     public enum EateryType
     {
