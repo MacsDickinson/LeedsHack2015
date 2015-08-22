@@ -1,4 +1,7 @@
-﻿namespace GroundJobs.ServiceBus
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace GroundJobs.ServiceBus
 {
     public interface IServiceRequest<out T> where T : ICommand
     {
@@ -10,16 +13,16 @@
         T Command { get; }
     }
 
-    public interface IService<T, in TRequest, out TResponse> 
-        where T : ICommand
-        where TRequest : IServiceRequest<T>
-        where TResponse : IServiceResponse<T>
+    public interface IService<in TRequest, out TResponse>
+        where TRequest : IServiceRequest<ICommand>
+        where TResponse : IServiceResponse<ICommand>
     {
         TResponse Execute(TRequest request);
     }
 
-    public interface IServiceAggregation<T> where T : ICommand
+    public interface IServiceAggregation<out TAggregate, in TServiceResponse>
+        where TServiceResponse : IServiceResponse<ICommand>
     {
-        
+        TAggregate Aggregate(IEnumerable<TServiceResponse> responses);
     }
 }

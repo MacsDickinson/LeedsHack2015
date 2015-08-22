@@ -3,16 +3,6 @@ using Xunit;
 
 namespace GroundJobs.ServiceBus.Tests
 {
-    public class ServiceBusAggregationSpecification
-    {
-        [Fact]
-        public void AggregateShouldCallServices()
-        {
-            var testCommand = new TestCommand();
-
-        }
-    }
-    
     public class ServiceBusPublishingSpecification
     {
         [Fact]

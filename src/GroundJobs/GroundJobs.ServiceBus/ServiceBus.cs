@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GroundJobs.ServiceBus
 {
@@ -11,7 +13,7 @@ namespace GroundJobs.ServiceBus
 
         public void Publish<T>(T command) where T : ICommand
         {
-            var handlerTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes().Where(t => t.GetInterfaces().Contains(typeof(ICommandHandler<T>))));
+            var handlerTypes = GetTypesImplementing(typeof(ICommandHandler<T>));
 
             var handlers = handlerTypes.Select(t => (ICommandHandler<T>)Activator.CreateInstance(t));
 
@@ -21,12 +23,30 @@ namespace GroundJobs.ServiceBus
             }
         }
 
-        public TResponse Aggregate<TCommand, TResponse>(TCommand command, TResponse response) 
-            where TCommand : ICommand
-            where TResponse : IServiceAggregation<TCommand>
+        public TAggregation Aggregate<TServiceRequest, TServiceResponse, TAggregation>(TServiceRequest command) 
+            where TServiceRequest : IServiceRequest<ICommand>
+            where TServiceResponse : IServiceResponse<ICommand>
         {
-            throw new NotImplementedException();
+            var aggregatorType = GetTypesImplementing(typeof (IServiceAggregation<TAggregation, TServiceResponse>)).Single();
+
+            var aggregator = (IServiceAggregation<TAggregation, TServiceResponse>)Activator.CreateInstance(aggregatorType);
+
+            var serviceTypes = GetTypesImplementing(typeof (IService<TServiceRequest, TServiceResponse>));
+
+            var services = serviceTypes.Select(t => (IService<TServiceRequest, TServiceResponse>) Activator.CreateInstance(t));
+
+            var serviceTasks = services.Select(s => Task.Factory.StartNew(() => s.Execute(command))).ToArray();
+
+            Task.WaitAll(serviceTasks);
+
+            return aggregator.Aggregate(serviceTasks.Select(t=> t.Result));
         }
+
+        private IEnumerable<Type> GetTypesImplementing(Type type)
+        {
+            return AppDomain.CurrentDomain.GetAssemblies()
+               .SelectMany(x => x.GetTypes().Where(t => t.GetInterfaces().Contains(type)));
+        } 
     }
 
     public interface ICommandHandler<in T> where T : ICommand

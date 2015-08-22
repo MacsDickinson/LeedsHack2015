@@ -71,7 +71,7 @@ namespace GroundJobs.ServiceBus
         public string LocationName;
     }
 
-    public class PretEateriesService : IService<GetEateriesCommand, GetEateriesRequest, GetEateriesResponse>
+    public class PretEateriesService : IService<GetEateriesRequest, GetEateriesResponse>
     {
         public GetEateriesResponse Execute(GetEateriesRequest request)
         {
