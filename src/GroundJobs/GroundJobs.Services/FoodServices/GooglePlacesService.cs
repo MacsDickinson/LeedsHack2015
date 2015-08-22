@@ -1,12 +1,8 @@
-﻿using System;
-using System.ComponentModel.Design.Serialization;
-using System.Threading.Tasks;
-
-namespace GroundJobs.ServiceBus.Services
+﻿namespace GroundJobs.Services.FoodServices
 {
-    public class GooglePlacesService : BaseHtmlScrapingService<GetEateriesRequest, GetEateriesResponse>
+    public class GooglePlacesService : BaseHtmlScrapingService<ClosestEateryRequest, ClosestEateryResponse>
     {
-        public override GetEateriesResponse Execute(GetEateriesRequest request)
+        public override ClosestEateryResponse Execute(ClosestEateryRequest request)
         {
             var encodedPostcode = request.Command.Postcode.Replace(" ", string.Empty);
             var postcodeData = GetHTMLString($"http://api.postcodes.io/postcodes/{encodedPostcode}");
@@ -20,14 +16,14 @@ namespace GroundJobs.ServiceBus.Services
             var googlePlaces = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(storesData.Result);
 
             if (googlePlaces.results.Count > 0)
-                return new GetEateriesResponse
+                return new ClosestEateryResponse
                 {
                     LocationName = googlePlaces.results[0].name.ToString(),
                     Latitude = googlePlaces.results[0].geometry.location.lat.ToString(),
                     Longitude = googlePlaces.results[0].geometry.location.lng.ToString(),
                     Distance = float.Parse("123")
                 };
-            return new GetEateriesResponse();
+            return new ClosestEateryResponse();
         }
     }
 }

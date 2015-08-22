@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using GroundJobs.ServiceBus.Services;
 using Xunit;
 
 namespace GroundJobs.ServiceBus.Tests

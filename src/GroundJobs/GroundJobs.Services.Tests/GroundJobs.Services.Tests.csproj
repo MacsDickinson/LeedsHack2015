@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GooglePlacesSpecification.cs" />
     <Compile Include="PretEateriesServiceServiceSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StarbucksServiceSpecification.cs" />
