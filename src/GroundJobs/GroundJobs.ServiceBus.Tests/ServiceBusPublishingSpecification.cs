@@ -23,16 +23,6 @@ namespace GroundJobs.ServiceBus.Tests
         }
 
         [Fact]
-        public void PublishShouldRaiseOnCompletedEvent()
-        {
-            var testCommand = new TestCommand();
-            var pass = false;
-            ServiceBus.Instance.OnCommandComplete += (sender,handler) => pass = true;
-            ServiceBus.Instance.Publish(testCommand);
-            Assert.True(pass);
-        }
-
-        [Fact]
         public void PublishShouldMoveThroughMultipleCommandHandlers()
         {
             Counter.Count = 0;

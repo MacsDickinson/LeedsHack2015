@@ -20,12 +20,23 @@ namespace GroundJobs.ServiceBus
             {
                 handler.Execute(command);
             }
-
-            OnCommandComplete?.Invoke(Instance, new CommandEventArgs { Command = command });
         }
+    }
 
-        public delegate void CommandComplete(CommandEventArgs e);
-        public event EventHandler<CommandEventArgs> OnCommandComplete;
+    public interface IServiceRequest<T> where T : ICommand
+    {
+        
+    }
+
+    public interface IServiceResponse<T> where T : ICommand
+    {
+
+    }
+
+    public interface IService<TCommand>
+        where TCommand : ICommand
+    {
+        IServiceResponse<TCommand> Execute(IServiceRequest<TCommand> request);
     }
 
     public interface ICommandHandler<in T> where T : ICommand
@@ -35,7 +46,7 @@ namespace GroundJobs.ServiceBus
 
     public class CommandEventArgs : EventArgs
     {
-        public object Command;
+        public ICommand Command;
     }
 
     public interface ICommand
