@@ -15,19 +15,40 @@ namespace GroundJobs.ServiceBus.Tests
         [Fact]
         public void PublishShouldAcceptAnICommand()
         {
-            Assert.Throws<NotImplementedException>(() => ServiceBus.Publish(new TestCommand()));
+            var testCommand = new TestCommand();
+            Assert.Null(testCommand.Data);
+            ServiceBus.Instance.Publish(testCommand);
+            Assert.NotNull(testCommand.Data);
+            Assert.Equal("Hello world!", testCommand.Data.Speak);
         }
-    }
 
-    public class TestCommand : ICommand<TestSubject>
-    {
-        public void Execute(TestSubject data)
+        [Fact]
+        public void PublishShouldRaiseOnCompletedEvent()
+        {
+            var testCommand = new TestCommand();
+            var pass = false;
+            ServiceBus.Instance.OnCommandComplete += (sender,handler) => pass = true;
+            ServiceBus.Instance.Publish(testCommand);
+            Assert.True(pass);
+        }
+
+        private void Instance_CommandComplete(object sender, CommandEventArgs e)
         {
             throw new NotImplementedException();
         }
     }
 
+    public class TestCommand : ICommand<TestSubject>
+    {
+        public TestSubject Data { get; set; }
+        public void Execute()
+        {
+            Data = new TestSubject { Speak = "Hello world!"};
+        }
+    }
+
     public class TestSubject
     {
+        public string Speak { get; set; }
     }
 }

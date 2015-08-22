@@ -12,15 +12,15 @@ namespace GroundJobs.ServiceBus
     {
         public static readonly ServiceBus Instance = new ServiceBus();
 
-        public static void Publish<T>(ICommand<T> command)
+        public void Publish<T>(ICommand<T> command)
         {
             command.Execute();
 
-            CommandComplete(Instance, new CommandEventArgs { Command = command});
+            OnCommandComplete(Instance, new CommandEventArgs { Command = command});
         }
 
-        public delegate void OnCommandComplete(CommandEventArgs e);
-        public static event EventHandler<CommandEventArgs> CommandComplete;
+        public delegate void CommandComplete(CommandEventArgs e);
+        public event EventHandler<CommandEventArgs> OnCommandComplete;
     }
 
     public class CommandEventArgs : EventArgs
