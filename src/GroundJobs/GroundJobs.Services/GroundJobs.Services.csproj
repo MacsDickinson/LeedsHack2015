@@ -49,6 +49,7 @@
     <Compile Include="FoodServices\ClosestEateryAggregator.cs" />
     <Compile Include="FoodServices\ClosestEateryRequest.cs" />
     <Compile Include="FoodServices\ClosestEateryResponse.cs" />
+    <Compile Include="FoodServices\ClosestGooglePlaceRequest.cs" />
     <Compile Include="FoodServices\EateryResult.cs" />
     <Compile Include="FoodServices\GooglePlacesService.cs" />
     <Compile Include="FoodServices\PretEateriesService.cs" />

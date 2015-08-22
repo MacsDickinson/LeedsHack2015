@@ -6,4 +6,5 @@ namespace GroundJobs.Services.FoodServices
     {
         public PostCodeSearchCommand Command { get; set; }
     }
+
 }
