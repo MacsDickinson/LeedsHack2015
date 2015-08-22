@@ -11,6 +11,10 @@
         "Facebook": {
             "AppId": "1474027809587921",
             "AppSecret": "5843b85a04a1d9293fc4b2c19e07d839"
+        },
+        "MicrosoftAccount": {
+            "ClientId": "0000000048167A41",
+            "ClientSecret": "NOmiXaWkhs2-RZT6BbqqSoxGMxf7OtPT"
         }
     }
 }

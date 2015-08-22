@@ -120,7 +120,7 @@ namespace GroundJobs.MVC
             // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
             app.UseFacebookAuthentication();
             // app.UseGoogleAuthentication();
-            // app.UseMicrosoftAccountAuthentication();
+            app.UseMicrosoftAccountAuthentication();
             // app.UseTwitterAuthentication();
 
             // Add MVC to the request pipeline.
