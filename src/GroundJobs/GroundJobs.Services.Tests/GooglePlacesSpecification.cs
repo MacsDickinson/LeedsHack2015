@@ -1,14 +1,12 @@
-﻿
-using GroundJobs.Services;
-using GroundJobs.Services.FoodServices;
+﻿using GroundJobs.Services.FoodServices;
 using Xunit;
 
-namespace GroundJobs.ServiceBus.Tests
+namespace GroundJobs.Services.Tests
 {
-    public class StarbucksServiceSpecification
+    public class GooglePlacesServiceSpecification
     {
         [Fact]
-        public void ShouldFindTheLightForLS73NU()
+        public void ShouldFindSevenForLS73NU()
         {
             var service = new GooglePlacesService();
             var response = service.Execute(new ClosestEateryRequest { Command = new PostCodeSearchCommand { Postcode = "LS73NU" } });
