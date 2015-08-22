@@ -2,10 +2,9 @@
 
 namespace GroundJobs.Data.Repositories
 {
-    public interface IEnterpriseReadyRepository<T>
+    public interface IEnterpriseReadyRepository<T> where T : class
     {
         T Get(int id);
-        IQueryable<T> Query();
         T Save(T entity);
         void Commit();
     }

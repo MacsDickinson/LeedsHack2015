@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnterpriseDbContext.cs" />
+    <Compile Include="EnterpriseReadyQuery.cs" />
     <Compile Include="EnterpriseReadyRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
