@@ -1,4 +1,4 @@
-﻿{
+{
   "webroot": "wwwroot",
   "userSecretsId": "aspnet5-GroundJobs.MVC-18816d91-24ad-4d4e-8666-8feaeed8263d",
   "version": "1.0.0-*",
@@ -34,7 +34,8 @@
   },
 
   "frameworks": {
-    "dnx451": { },
+    "dnx451": {
+    },
     "dnxcore50": { }
   },
 

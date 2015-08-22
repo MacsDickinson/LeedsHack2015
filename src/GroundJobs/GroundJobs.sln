@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GroundJobs.MVC", "src\GroundJobs.MVC\GroundJobs.MVC.xproj", "{9FC0FFC9-2241-4E0A-BE3F-84B67655DE8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroundJobs.ServiceBus.Tests", "GroundJobs.ServiceBus.Tests\GroundJobs.ServiceBus.Tests.csproj", "{1DA34D33-2DA8-4D92-90E2-E75829DF1273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroundJobs.ServiceBus", "GroundJobs.ServiceBus\GroundJobs.ServiceBus.csproj", "{DC6176CF-E966-46AE-B52C-A31F86383469}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,21 @@ Global
 		{9FC0FFC9-2241-4E0A-BE3F-84B67655DE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FC0FFC9-2241-4E0A-BE3F-84B67655DE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FC0FFC9-2241-4E0A-BE3F-84B67655DE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DA34D33-2DA8-4D92-90E2-E75829DF1273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DA34D33-2DA8-4D92-90E2-E75829DF1273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DA34D33-2DA8-4D92-90E2-E75829DF1273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DA34D33-2DA8-4D92-90E2-E75829DF1273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6176CF-E966-46AE-B52C-A31F86383469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6176CF-E966-46AE-B52C-A31F86383469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6176CF-E966-46AE-B52C-A31F86383469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6176CF-E966-46AE-B52C-A31F86383469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9FC0FFC9-2241-4E0A-BE3F-84B67655DE8E} = {A871599E-08DA-47C5-925F-FC6A2AFBAE4F}
+		{1DA34D33-2DA8-4D92-90E2-E75829DF1273} = {A871599E-08DA-47C5-925F-FC6A2AFBAE4F}
+		{DC6176CF-E966-46AE-B52C-A31F86383469} = {A871599E-08DA-47C5-925F-FC6A2AFBAE4F}
 	EndGlobalSection
 EndGlobal

@@ -15,5 +15,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <DevelopmentServerPort>10157</DevelopmentServerPort>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClassLibrary1\ClassLibrary1.csproj" />
+    <ProjectReference Include="..\..\GroundJobs.ServiceBus\GroundJobs.ServiceBus.csproj" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
