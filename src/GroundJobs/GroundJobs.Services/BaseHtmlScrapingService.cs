@@ -1,7 +1,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
+using GroundJobs.ServiceBus;
+using ICommand = GroundJobs.ServiceBus.ICommand;
 
-namespace GroundJobs.ServiceBus.Services
+namespace GroundJobs.Services
 {
     public abstract class BaseHtmlScrapingService<TRequest, TResponse> : IService<TRequest, TResponse> where TRequest : IServiceRequest<ICommand> where TResponse : IServiceResponse<ICommand>
     {

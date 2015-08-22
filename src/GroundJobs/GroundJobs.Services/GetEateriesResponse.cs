@@ -1,4 +1,6 @@
-namespace GroundJobs.ServiceBus.Services
+using GroundJobs.ServiceBus;
+
+namespace GroundJobs.Services
 {
     public class GetEateriesResponse : IServiceResponse<PostCodeSearchCommand>
     {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace GroundJobs.ServiceBus.Services
+﻿namespace GroundJobs.Services
 {
     public class StarbucksService : BaseHtmlScrapingService<GetEateriesRequest, GetEateriesResponse>
     {

@@ -1,4 +1,4 @@
-﻿namespace GroundJobs.ServiceBus.Services
+﻿namespace GroundJobs.Services
 {
     public static class StringExtensions
     {
