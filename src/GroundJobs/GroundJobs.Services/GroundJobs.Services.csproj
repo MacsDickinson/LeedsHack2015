@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseHtmlScrapingService.cs" />
+    <Compile Include="FoodServices\ClosestEateriesAggregator.cs" />
     <Compile Include="FoodServices\ClosestEateryAggregator.cs" />
     <Compile Include="FoodServices\ClosestEateryRequest.cs" />
     <Compile Include="FoodServices\ClosestEateryResponse.cs" />
