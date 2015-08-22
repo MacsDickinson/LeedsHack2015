@@ -22,11 +22,6 @@ namespace GroundJobs.Data.EF
             return context.Set<T>().Find(id);
         }
 
-        public IQueryable<T> Query()
-        {
-            return context.Set<T>().AsQueryable();
-        }
-
         public T Save(T entity)
         {
             return context.Set<T>().Add(entity);

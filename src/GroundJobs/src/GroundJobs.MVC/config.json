@@ -1,10 +1,16 @@
 {
-  "AppSettings": {
-    "SiteTitle": "GroundJobs.MVC"
-  },
-  "Data": {
-    "DefaultConnection": {
-      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-GroundJobs.MVC-18816d91-24ad-4d4e-8666-8feaeed8263d;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "AppSettings": {
+        "SiteTitle": "GroundJobs.MVC"
+    },
+    "Data": {
+        "DefaultConnection": {
+            "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-GroundJobs.MVC-18816d91-24ad-4d4e-8666-8feaeed8263d;Trusted_Connection=True;MultipleActiveResultSets=true"
+        }
+    },
+    "Authentication": {
+        "Facebook": {
+            "AppId": "1474027809587921",
+            "AppSecret": "5843b85a04a1d9293fc4b2c19e07d839"
+        }
     }
-  }
 }
