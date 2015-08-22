@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\BaseHtmlScrapingService.cs" />
+    <Compile Include="Services\GetEateriesRequest.cs" />
+    <Compile Include="Services\GetEateriesResponse.cs" />
+    <Compile Include="Services\GooglePlacesService.cs" />
+    <Compile Include="Services\PostCodeSearchCommand.cs" />
+    <Compile Include="Services\PretEateriesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBus.cs" />
     <Compile Include="ServiceContracts.cs" />

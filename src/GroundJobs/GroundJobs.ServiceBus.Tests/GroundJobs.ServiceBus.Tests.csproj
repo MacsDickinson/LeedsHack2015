@@ -69,6 +69,8 @@
     <Compile Include="ServiceBusAggregationSpecification.cs" />
     <Compile Include="ServiceBusPublishingSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\StarbucksServiceSpecification.cs" />
+	<Compile Include="GooglePlacesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
