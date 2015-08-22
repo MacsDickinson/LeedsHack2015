@@ -18,6 +18,7 @@ namespace GroundJobs.Services.FoodServices
         public List<GooglePlaceType> Types { get; set; }
         public List<string> Names { get; set; }
         public string Keyword { get; set; }
+        public bool Opennow { get; set; }
 
         public List<ClosestGooglePlaceResponse> Get()
         {
@@ -36,7 +37,9 @@ namespace GroundJobs.Services.FoodServices
             var types = Types?.Aggregate("", (current, type) => current + (type + "|")) ?? "";
             var names = Names?.Aggregate("", (current, type) => current + (type + " ")) ?? "";
 
-            var googlePlacesResponse = GetResponseString($"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={Latitude},{Longitude}&radius=500&types={types}&name={names}&keyword={Keyword}&key={APIKey}");
+            string url = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={Latitude},{Longitude}&radius=500&types={types}&name={names}&keyword={Keyword}&key={APIKey}";
+            if (Opennow) url += "opennow";
+            var googlePlacesResponse = GetResponseString(url);
             googlePlacesResponse.Wait();
             var googlePlaces = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(googlePlacesResponse.Result);
 
@@ -46,7 +49,7 @@ namespace GroundJobs.Services.FoodServices
             {
                 var closestPlace = new ClosestGooglePlaceResponse
                 {
-                    LocationName = googlePlace.name?.ToString(),
+                    Name = googlePlace.name?.ToString(),
                     Latitude = float.Parse(googlePlace.geometry.location.lat.ToString()),
                     Longitude = float.Parse(googlePlace.geometry.location.lng.ToString()),
                 };

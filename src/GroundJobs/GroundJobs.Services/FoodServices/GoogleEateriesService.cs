@@ -9,7 +9,7 @@ namespace GroundJobs.Services.FoodServices
             var service = new GooglePlacesService();
             var nearest = service.Execute(new ClosestGooglePlaceRequest { Command = request.Command, Types = new List<GooglePlaceType> { GooglePlaceType.cafe, GooglePlaceType.bar, GooglePlaceType.restaurant } });
             return nearest != null 
-                ? new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.LocationName } 
+                ? new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.Name } 
                 : default (ClosestEateryResponse);
         }
     }
