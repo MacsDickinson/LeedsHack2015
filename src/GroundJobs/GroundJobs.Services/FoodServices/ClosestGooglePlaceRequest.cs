@@ -15,7 +15,7 @@ namespace GroundJobs.Services.FoodServices
         public string PostCode { get; set; }
         public float Latitude { get; set; }
         public float Longitude { get; set; }
-        public List<EateryType> Types { get; set; }
+        public List<GooglePlaceType> Types { get; set; }
         public List<string> Names { get; set; }
         public string Keyword { get; set; }
 
@@ -33,8 +33,8 @@ namespace GroundJobs.Services.FoodServices
                 Longitude = float.Parse(postcode.result.longitude.ToString());
             }
 
-            var types = Types.Aggregate("", (current, type) => current + (type + "|"));
-            var names = Names.Aggregate("", (current, type) => current + (type + " "));
+            var types = Types?.Aggregate("", (current, type) => current + (type + "|")) ?? "";
+            var names = Names?.Aggregate("", (current, type) => current + (type + " ")) ?? "";
 
             var googlePlacesResponse = GetResponseString($"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={Latitude},{Longitude}&radius=500&types={types}&name={names}&keyword={Keyword}&key={APIKey}");
             googlePlacesResponse.Wait();
@@ -64,7 +64,7 @@ namespace GroundJobs.Services.FoodServices
         }
     }
 
-    public enum EateryType
+    public enum GooglePlaceType
     {
         accounting,
         airport,
