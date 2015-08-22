@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace GroundJobs.ServiceBus
@@ -20,6 +19,13 @@ namespace GroundJobs.ServiceBus
             {
                 handler.Execute(command);
             }
+        }
+
+        public TResponse Aggregate<TCommand, TResponse>(TCommand command, TResponse response) 
+            where TCommand : ICommand
+            where TResponse : IServiceAggregation<TCommand>
+        {
+            throw new NotImplementedException();
         }
     }
 

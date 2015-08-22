@@ -71,9 +71,9 @@ namespace GroundJobs.ServiceBus
         public string LocationName;
     }
 
-    public class PretEateriesService : IService<GetEateriesCommand>
+    public class PretEateriesService : IService<GetEateriesCommand, GetEateriesRequest, GetEateriesResponse>
     {
-        public IServiceResponse<GetEateriesCommand> Execute(IServiceRequest<GetEateriesCommand> request)
+        public GetEateriesResponse Execute(GetEateriesRequest request)
         {
             var nearest = PretProvider.GetNearest(request.Command.Postcode);
 
@@ -86,5 +86,10 @@ namespace GroundJobs.ServiceBus
                 LocationName = nearest.Result.Location
             };
         }
+    }
+
+    public class GetEateriesRequest : IServiceRequest<GetEateriesCommand>
+    {
+        public GetEateriesCommand Command { get; set; }
     }
 }

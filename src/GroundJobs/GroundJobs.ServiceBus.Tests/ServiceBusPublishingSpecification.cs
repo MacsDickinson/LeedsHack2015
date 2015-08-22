@@ -3,15 +3,18 @@ using Xunit;
 
 namespace GroundJobs.ServiceBus.Tests
 {
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
+    public class ServiceBusAggregationSpecification
+    {
+        [Fact]
+        public void AggregateShouldCallServices()
+        {
+            var testCommand = new TestCommand();
+
+        }
+    }
+    
     public class ServiceBusPublishingSpecification
     {
-        
-        public ServiceBusPublishingSpecification()
-        {
-        }
-
         [Fact]
         public void PublishShouldAcceptAnICommand()
         {
@@ -29,11 +32,6 @@ namespace GroundJobs.ServiceBus.Tests
             var testCommand = new MultipleHandlersTestCommand();
             ServiceBus.Instance.Publish(testCommand);
             Assert.Equal(2, Counter.Count);
-        }
-
-        private void Instance_CommandComplete(object sender, CommandEventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 
