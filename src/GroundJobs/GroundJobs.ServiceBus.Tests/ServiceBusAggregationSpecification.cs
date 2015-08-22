@@ -12,7 +12,7 @@ namespace GroundJobs.ServiceBus.Tests
         {
             var command = new TestAggregationCommand();
             var response = ServiceBus.Instance.Aggregate<TestAggregationRequest, TestAggregationResponse, TestAggregation>(new TestAggregationRequest {Command = command});
-            Assert.Equal(2, response.Count);
+            Assert.Equal(3, response.Count);
         }
     }
 
@@ -20,7 +20,7 @@ namespace GroundJobs.ServiceBus.Tests
     {
         public TestAggregation Aggregate(IEnumerable<TestAggregationResponse> responses)
         {
-            return new TestAggregation {Count = responses.Sum(r => r.Command.One)};
+            return new TestAggregation {Count = responses.Sum(r => r.Command.Value)};
         }
     }
 
@@ -28,7 +28,7 @@ namespace GroundJobs.ServiceBus.Tests
     {
         public TestAggregationResponse Execute(TestAggregationRequest request)
         {
-            return new TestAggregationResponse { Command = request.Command};
+            return new TestAggregationResponse { Command = new TestAggregationCommand {Value = 2} };
         }
     }
 
@@ -47,7 +47,7 @@ namespace GroundJobs.ServiceBus.Tests
 
     public class TestAggregationCommand : ICommand
     {
-        public int One = 1;
+        public int Value = 1;
     }
 
     public class TestAggregationRequest : IServiceRequest<TestAggregationCommand>
