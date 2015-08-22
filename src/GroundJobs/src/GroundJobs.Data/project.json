@@ -1,11 +1,14 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "GroundJobs.Data Class Library",
-  "authors": [ "Macs" ],
-  "tags": [ "" ],
+  "authors": [
+    "Macs"
+  ],
+  "tags": [
+    ""
+  ],
   "projectUrl": "",
   "licenseUrl": "",
-
   "dependencies": {
     "System.Collections": "4.0.10-beta-23019",
     "System.Linq": "4.0.0-beta-23019",
@@ -13,8 +16,14 @@
     "System.Runtime": "4.0.10-beta-23019",
     "Microsoft.CSharp": "4.0.0-beta-23019"
   },
-
   "frameworks": {
-    "dotnet": { }
+    "dotnet": {},
+    "net46": {
+      "wrappedProject": "../../GroundJobs.Data/GroundJobs.Data.csproj",
+      "bin": {
+        "assembly": "../../GroundJobs.Data/obj/{configuration}/GroundJobs.Data.dll",
+        "pdb": "../../GroundJobs.Data/obj/{configuration}/GroundJobs.Data.pdb"
+      }
+    }
   }
 }
