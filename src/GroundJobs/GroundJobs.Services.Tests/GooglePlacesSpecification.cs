@@ -1,4 +1,5 @@
-﻿using GroundJobs.Services.FoodServices;
+﻿using System.Collections.Generic;
+using GroundJobs.Services.FoodServices;
 using Xunit;
 
 namespace GroundJobs.Services.Tests
@@ -9,7 +10,8 @@ namespace GroundJobs.Services.Tests
         public void ShouldFindSevenForLS73NU()
         {
             var service = new GooglePlacesService();
-            var response = service.Execute(new ClosestGooglePlaceRequest { Command = new PostCodeSearchCommand { Postcode = "LS73NU" }, Types = { EateryType.food }});
+            var closestGooglePlaceRequest = new ClosestGooglePlaceRequest { Command = new PostCodeSearchCommand { Postcode = "LS73NU" }, Types = new List<EateryType> { EateryType.food }};
+            var response = service.Execute(closestGooglePlaceRequest);
 
             Xunit.Assert.Equal("Seven", response.LocationName);
             Xunit.Assert.Equal((float)53.82792, response.Latitude);
