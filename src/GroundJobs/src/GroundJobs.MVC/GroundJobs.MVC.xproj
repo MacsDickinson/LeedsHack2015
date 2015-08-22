@@ -17,6 +17,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ClassLibrary1\ClassLibrary1.csproj" />
+    <ProjectReference Include="..\..\GroundJobs.Data\GroundJobs.Data.csproj" />
     <ProjectReference Include="..\..\GroundJobs.ServiceBus\GroundJobs.ServiceBus.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
