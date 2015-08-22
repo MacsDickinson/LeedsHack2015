@@ -23,22 +23,6 @@ namespace GroundJobs.ServiceBus
         }
     }
 
-    public interface IServiceRequest<T> where T : ICommand
-    {
-        
-    }
-
-    public interface IServiceResponse<T> where T : ICommand
-    {
-
-    }
-
-    public interface IService<TCommand>
-        where TCommand : ICommand
-    {
-        IServiceResponse<TCommand> Execute(IServiceRequest<TCommand> request);
-    }
-
     public interface ICommandHandler<in T> where T : ICommand
     {
         void Execute(T command);
