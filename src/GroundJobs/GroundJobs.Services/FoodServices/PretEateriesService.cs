@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace GroundJobs.Services
+namespace GroundJobs.Services.FoodServices
 {
-    public class PretEateriesService : BaseHtmlScrapingService<GetEateriesRequest, GetEateriesResponse>
+    public class PretEateriesService : BaseHtmlScrapingService<ClosestEateryRequest, ClosestEateryResponse>
     {
         public static async Task<Details> GetNearest(string postcode)
         {
@@ -30,14 +30,14 @@ namespace GroundJobs.Services
             }
         }
 
-        public override GetEateriesResponse Execute(GetEateriesRequest request)
+        public override ClosestEateryResponse Execute(ClosestEateryRequest request)
         {
             var nearest = GetNearest(request.Command.Postcode);
 
             if (nearest == null)
                 return null;
 
-            return new GetEateriesResponse
+            return new ClosestEateryResponse
             {
                 Distance = nearest.Result.Distance,
                 LocationName = nearest.Result.Location

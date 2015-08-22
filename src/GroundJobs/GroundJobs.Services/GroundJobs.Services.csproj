@@ -45,12 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseHtmlScrapingService.cs" />
-    <Compile Include="GetEateriesRequest.cs" />
-    <Compile Include="GetEateriesResponse.cs" />
+    <Compile Include="FoodServices\ClosestEateryAggregator.cs" />
+    <Compile Include="FoodServices\ClosestEateryRequest.cs" />
+    <Compile Include="FoodServices\ClosestEateryResponse.cs" />
+    <Compile Include="FoodServices\EateryResult.cs" />
+    <Compile Include="FoodServices\PretEateriesService.cs" />
+    <Compile Include="FoodServices\StarbucksService.cs" />
     <Compile Include="PostCodeSearchCommand.cs" />
-    <Compile Include="PretEateriesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StarbucksService.cs" />
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

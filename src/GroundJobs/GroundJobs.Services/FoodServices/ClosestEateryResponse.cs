@@ -1,8 +1,8 @@
 using GroundJobs.ServiceBus;
 
-namespace GroundJobs.Services
+namespace GroundJobs.Services.FoodServices
 {
-    public class GetEateriesResponse : IServiceResponse<PostCodeSearchCommand>
+    public class ClosestEateryResponse : IServiceResponse<PostCodeSearchCommand>
     {
         public PostCodeSearchCommand Command { get; private set; }
         public float Distance;
