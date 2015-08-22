@@ -16,6 +16,7 @@
     <DevelopmentServerPort>10157</DevelopmentServerPort>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\GroundJobs.ServiceBus\GroundJobs.ServiceBus.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
