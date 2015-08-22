@@ -231,7 +231,7 @@
   },
   "libraries": {
     "Microsoft.CSharp/4.0.0-beta-23019": {
-      "sha512": "wp5SlNCIXAFqPbWMOAD8eedaPA1vPyBSh6P/OZUaSab4ogrFdElpHVoW+wTicbXLVJcvQwp1Jtk9xP5Slmq4EA==",
+      "sha512": "TsYR8ylpBw89cxCTzA9eD8wqLR5u4TnNvUCLU7Qt9TlbxmNM0jPaz80L4N+W81kEoOpchlckGGCTA4JVemmEVA==",
       "files": [
         "Microsoft.CSharp.4.0.0-beta-23019.nupkg",
         "Microsoft.CSharp.4.0.0-beta-23019.nupkg.sha512",
@@ -275,7 +275,7 @@
       ]
     },
     "System.Dynamic.Runtime/4.0.0-beta-23019": {
-      "sha512": "N09LuTgPVDNxgUz+IZsX8j0nCzd7vBruIi/Qhjumy5vaaL3pKmKsPS1ZbyIrmwaHuP0GIfpNfdd3WAQWEf07Fw==",
+      "sha512": "WE/wuubmpzkmAh34gOHYvF+eJR9xUKSif2sB7CNZykWwtnVvSkd+nIjocduT88BXZZteW5LWD/M85EefFYc50A==",
       "files": [
         "License.rtf",
         "System.Dynamic.Runtime.4.0.0-beta-23019.nupkg",
@@ -335,7 +335,7 @@
       ]
     },
     "System.Linq.Expressions/4.0.0-beta-23019": {
-      "sha512": "F+gr9tKGrIZo11f3RpfOXuoSU7dUZfnNmkDeYKgHSIG4Q4knnUhIHcbRlS+5vUbeBYsUXMMQWMryEiOOG3kJLw==",
+      "sha512": "2YDSiXCOPONzEA/8fMN089faDfOiKfntYnodryL5sFskdszIbg3E9pMXKBMuclHx6g2ceBkOuZy/M5FYmq3YMg==",
       "files": [
         "License.rtf",
         "System.Linq.Expressions.4.0.0-beta-23019.nupkg",
@@ -350,7 +350,7 @@
       ]
     },
     "System.ObjectModel/4.0.10-beta-23019": {
-      "sha512": "sJ+7kgWoTs4d8eNlhJB/p1Uq2iWHYVxO7ALNpB3sTwh3LORqwwPZe5FbSweccA3seM+zLSYa2AqBGp69JOXbcA==",
+      "sha512": "xG9aUQ0QLcA1uJdiEZmkAuXnMg7/cZB9fc8S+zgNTkbfOdjXMITcmmT9RTMkNrTQBO7rjLMZAMMDvihxi3Htiw==",
       "files": [
         "System.ObjectModel.4.0.10-beta-23019.nupkg",
         "System.ObjectModel.4.0.10-beta-23019.nupkg.sha512",
@@ -441,7 +441,7 @@
       ]
     },
     "System.Runtime/4.0.10-beta-23019": {
-      "sha512": "8/UWFt7a/s7snUtCE3j/DSRlm+iTuPCQ6N8uq4o99F9vuqdkMImmQEnqwirfVzkuprolgX48UOsZdt4zyJgRFQ==",
+      "sha512": "yZZc2OMujDOirzMus09Og7DtGdz8Uj/zMtVRvouNSo1QQ68KV9iYjXMJJ48Jhv6DYsmH1vGEbL98NVFEHcrpqA==",
       "files": [
         "License.rtf",
         "System.Runtime.4.0.10-beta-23019.nupkg",

@@ -8,13 +8,15 @@ namespace GroundJobs.ServiceBus
     {
         public static readonly ServiceBus Instance = new ServiceBus();
 
-        public static void Publish<T>(ICommand<T> command)
+        public void Publish<T>(ICommand<T> command)
         {
-            CommandComplete(Instance, new CommandEventArgs { Command = command});
+            command.Execute();
+
+            OnCommandComplete(Instance, new CommandEventArgs { Command = command});
         }
 
-        public delegate void OnCommandComplete(CommandEventArgs e);
-        public static event EventHandler<CommandEventArgs> CommandComplete;
+        public delegate void CommandComplete(CommandEventArgs e);
+        public event EventHandler<CommandEventArgs> OnCommandComplete;
     }
 
     public class CommandEventArgs : EventArgs
@@ -22,8 +24,9 @@ namespace GroundJobs.ServiceBus
         public object Command;
     }
 
-    public interface ICommand<in T>
+    public interface ICommand<T>
     {
-        void Execute(T data);
+        T Data { get; set; }
+        void Execute();
     }
 }
