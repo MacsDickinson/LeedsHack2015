@@ -9,7 +9,7 @@ namespace GroundJobs.Services.Tests
         public void ShouldFindSevenForLS73NU()
         {
             var service = new GooglePlacesService();
-            var response = service.Execute(new ClosestGooglePlaceRequest { Command = new PostCodeSearchCommand { Postcode = "LS73NU" }, Type = EateryType.food});
+            var response = service.Execute(new ClosestGooglePlaceRequest { Command = new PostCodeSearchCommand { Postcode = "LS73NU" }, Types = { EateryType.food }});
 
             Xunit.Assert.Equal("Seven", response.LocationName);
             Xunit.Assert.Equal((float)53.82792, response.Latitude);
