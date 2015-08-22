@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Work Prefereces";
+}
+@model SurveyIndexViewModel
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section>
+            <form asp-controller="Survey" asp-action="Index" method="post" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="postcode" class="col-sm-4 control-label">Postcode</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.Postcode, new { name = "Postcode", @class="form-control", @id="postcode", placeholder="LS1 1AB" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-4 control-label">Work Location</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.WorkLocation, new List<SelectListItem> { new SelectListItem { Text = "Leeds", Value = "Leeds" } }, "-- Please Select --", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-4 control-label">Which is your favoured coffee bean?</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.FavoriteCoffee, new List<SelectListItem> {
+                            new SelectListItem { Text = "Agua Clara", Value = "1" },
+                            new SelectListItem { Text = "Filadelfia Espresso", Value = "2" },
+                            new SelectListItem { Text = "Fazenda Santa Ines", Value = "3" },
+                            new SelectListItem { Text = "Bibi Plantation", Value = "4" },
+                            new SelectListItem { Text = "Finca Filadelfia", Value = "5" } },
+                        "-- Please Select --",
+                        new { @class = "form-control", name = "FavoriteCoffee" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-4 control-label">Which is your favoured blend of craft beer?</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.FavoriteBeer, new List<SelectListItem> {
+                            new SelectListItem { Value = "1", Text = "Abbey & Trappist" },
+                            new SelectListItem { Value = "2", Text = "Brown & Amber Ale" },
+                            new SelectListItem { Value = "3", Text = "Fruit Beers" },
+                            new SelectListItem { Value = "4", Text = "IPA" },
+                            new SelectListItem { Value = "5", Text = "Lager & Hybrid" },
+                            new SelectListItem { Value = "6", Text = "Pale Ale" },
+                            new SelectListItem { Value = "7", Text = "Porters" },
+                            new SelectListItem { Value = "8", Text = "Real Ale" },
+                            new SelectListItem { Value = "9", Text = "Sour Beer" },
+                            new SelectListItem { Value = "10", Text = "Speciality Beers" },
+                            new SelectListItem { Value = "11", Text = "Stout" },
+                            new SelectListItem { Value = "12", Text = "Strong Dark Ale" },
+                            new SelectListItem { Value = "13", Text = "Wheat Beer" } },
+                       "-- Please Select --",
+                       new { @class = "form-control", name = "FavoriteBeer" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-4 control-label">How many tattoos do you have?</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.FavoriteCoffee, new List<SelectListItem> {
+                            new SelectListItem { Text = "Some", Value = "1" },
+                            new SelectListItem { Text = "Half Sleeve", Value = "2" },
+                            new SelectListItem { Text = "Full Slevee", Value = "3" },
+                            new SelectListItem { Text = "Covered in them", Value = "4" } },
+                        "-- Please Select --",
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-4 control-label">Which of these artists did you totally discover?</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.ArtistsDiscovered, new List<SelectListItem> {
+                            new SelectListItem { Text = "SBTRKT", Value = "1" },
+                            new SelectListItem { Text = "Robyn", Value = "2" },
+                            new SelectListItem { Text = "LE YOUTH", Value = "3" },
+                            new SelectListItem { Text = "Hot Chip", Value = "4" },
+                            new SelectListItem { Text = "YACHT", Value = "5" },
+                            new SelectListItem { Text = "I love you but I've chosed darkness", Value = "5" } },
+                        "-- Please Select --",
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-4 control-label">Which diet do you follow?</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.FavoriteCoffee, new List<SelectListItem> {
+                            new SelectListItem { Text = "Paeleo Diet", Value = "1" },
+                            new SelectListItem { Text = "Hunter Gatherer Diet", Value = "2" },
+                            new SelectListItem { Text = "Fast Diet", Value = "3" },
+                            new SelectListItem { Text = "Juice Diet", Value = "4" } },
+                        "-- Please Select --",
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-4 control-label">When not dieting, what do you eat?</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.FavoriteCoffee, new List<SelectListItem> {
+                            new SelectListItem { Text = "Stone baked sour dough pizza", Value = "1" },
+                            new SelectListItem { Text = "Fish & Chips", Value = "2" },
+                            new SelectListItem { Text = "Sushi", Value = "3" } },
+                        "-- Please Select --",
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
