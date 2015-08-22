@@ -55,6 +55,7 @@
     <Compile Include="FoodServices\EateryResult.cs" />
     <Compile Include="FoodServices\GoogleEateriesService.cs" />
     <Compile Include="FoodServices\GooglePlacesService.cs" />
+    <Compile Include="FoodServices\GreggsService.cs" />
     <Compile Include="FoodServices\McDonaldsService.cs" />
     <Compile Include="FoodServices\PretEateriesService.cs" />
     <Compile Include="FoodServices\StarbucksService.cs" />

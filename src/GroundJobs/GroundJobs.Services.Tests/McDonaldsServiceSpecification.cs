@@ -6,7 +6,7 @@ namespace GroundJobs.Services.Tests
     public class McDonaldsServiceSpecification
     {
         [Fact]
-        public void ShouldFindTheLightForLS73NU()
+        public void ShouldFindMcDonaldsLeeds2ForLS73NU()
         {
             var service = new McDonaldsService();
             var response = service.Execute(new ClosestEateryRequest { Command = new PostCodeSearchCommand { Postcode = "LS73NU" } });

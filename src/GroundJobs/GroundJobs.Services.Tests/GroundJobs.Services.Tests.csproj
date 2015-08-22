@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GooglePlacesSpecification.cs" />
+    <Compile Include="GreggsServiceSpecification.cs" />
     <Compile Include="McDonaldsServiceSpecification.cs" />
     <Compile Include="PretEateriesServiceServiceSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

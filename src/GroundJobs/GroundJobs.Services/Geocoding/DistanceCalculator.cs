@@ -15,12 +15,17 @@ namespace GroundJobs.Services.Geocoding
                 Math.Sin(dLon / 2) * Math.Sin(dLon / 2)
                 ;
             var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
-            return (float)(EarthRadius * c); // Distance in km
+            return (float)((EarthRadius * c) / 1.6); // Distance in miles
         }
 
         private static double DegreeToRadius(float degree)
         {
             return degree * (Math.PI / 180);
+        }
+
+        public static float GetDistance(PostCode postcode, PostCode distancePostcode)
+        {
+            return GetDistance(postcode.Latitude, postcode.Longitude, distancePostcode.Latitude, distancePostcode.Longitude);
         }
     }
 }
