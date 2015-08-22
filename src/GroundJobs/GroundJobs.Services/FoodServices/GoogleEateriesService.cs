@@ -9,7 +9,9 @@ namespace GroundJobs.Services.FoodServices
         {
             var service = new GooglePlacesService();
             var nearest = service.Execute(new ClosestGooglePlaceRequest { Command = request.Command, Type = EateryType.cafe });
-            return new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.LocationName };
+            return nearest != null 
+                ? new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.LocationName } 
+                : default (ClosestEateryResponse);
         }
     }
 
@@ -19,7 +21,9 @@ namespace GroundJobs.Services.FoodServices
         {
             var service = new GooglePlacesService();
             var nearest = service.Execute(new ClosestGooglePlaceRequest { Command = request.Command, Type = EateryType.bar });
-            return new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.LocationName };
+            return nearest != null
+                            ? new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.LocationName }
+                            : default(ClosestEateryResponse);
         }
     }
 
@@ -29,7 +33,9 @@ namespace GroundJobs.Services.FoodServices
         {
             var service = new GooglePlacesService();
             var nearest = service.Execute(new ClosestGooglePlaceRequest { Command = request.Command, Type = EateryType.restaurant });
-            return new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.LocationName };
+            return nearest != null
+                            ? new ClosestEateryResponse { Command = request.Command, Distance = nearest.Distance, LocationName = nearest.LocationName }
+                            : default(ClosestEateryResponse);
         }
     }
 }

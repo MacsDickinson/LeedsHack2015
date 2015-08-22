@@ -51,11 +51,16 @@
     <Compile Include="FoodServices\ClosestEateryRequest.cs" />
     <Compile Include="FoodServices\ClosestEateryResponse.cs" />
     <Compile Include="FoodServices\ClosestGooglePlaceRequest.cs" />
+    <Compile Include="FoodServices\ClosestGooglePlaceResponse.cs" />
     <Compile Include="FoodServices\EateryResult.cs" />
     <Compile Include="FoodServices\GoogleEateriesService.cs" />
     <Compile Include="FoodServices\GooglePlacesService.cs" />
+    <Compile Include="FoodServices\McDonaldsService.cs" />
     <Compile Include="FoodServices\PretEateriesService.cs" />
     <Compile Include="FoodServices\StarbucksService.cs" />
+    <Compile Include="Geocoding\DistanceCalculator.cs" />
+    <Compile Include="Geocoding\HttpHelper.cs" />
+    <Compile Include="Geocoding\PostCodeService.cs" />
     <Compile Include="PostCodeSearchCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensions.cs" />
