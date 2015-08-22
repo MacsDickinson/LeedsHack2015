@@ -12,7 +12,7 @@ namespace GroundJobs.Services.FoodServices
 
             return new ClosestEateryResponse
             {
-                LocationName = stores.store.name.ToString(),
+                LocationName = $"Starbucks - {stores.store.name.ToString()}",
                 Distance = float.Parse(stores.distance.ToString())
             };
         }

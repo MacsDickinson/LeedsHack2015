@@ -35,7 +35,17 @@ namespace GroundJobs.ServiceBus
 
             var services = serviceTypes.Select(t => (IService<TServiceRequest, TServiceResponse>) Activator.CreateInstance(t));
 
-            var serviceTasks = services.Select(s => Task.Factory.StartNew(() => s.Execute(command))).ToArray();
+            var serviceTasks = services.Select(s => Task.Factory.StartNew(() =>
+            {
+                try
+                {
+                    return s.Execute(command);
+                }
+                catch (Exception)
+                {
+                    return default(TServiceResponse);
+                }
+            })).ToArray();
 
             Task.WaitAll(serviceTasks);
 

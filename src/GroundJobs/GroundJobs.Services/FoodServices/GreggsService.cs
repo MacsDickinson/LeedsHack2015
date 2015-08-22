@@ -28,7 +28,7 @@ namespace GroundJobs.Services.FoodServices
                 var distancePostcode = PostCodeService.GetLatLong(value);
                 var distance = DistanceCalculator.GetDistance(postcode, distancePostcode);
 
-                return new ClosestEateryResponse { Command = request.Command, LocationName = location, Distance = distance };
+                return new ClosestEateryResponse { Command = request.Command, LocationName = $"Greggs - {location}", Distance = distance };
             }
             else
             {

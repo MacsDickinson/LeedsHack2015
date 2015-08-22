@@ -22,7 +22,7 @@ namespace GroundJobs.Services.FoodServices
                 var location = output.SubstringBetweenStrings(openLocationTag, closeLocationTag, foundPos);
                 var distance = output.SubstringBetweenStrings(openDistanceTag, closeDistanceTag, foundPos);
 
-                return new Details { Location = location, Distance = float.Parse(distance) };
+                return new Details { Location = $"Pret-a-Manger - {location}", Distance = float.Parse(distance) };
             }
             else
             {
