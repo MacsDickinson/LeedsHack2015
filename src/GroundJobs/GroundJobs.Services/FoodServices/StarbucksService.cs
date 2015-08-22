@@ -1,11 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace GroundJobs.ServiceBus.Services
+﻿namespace GroundJobs.Services.FoodServices
 {
-    public class StarbucksService : BaseHtmlScrapingService<GetEateriesRequest, GetEateriesResponse>
+    public class StarbucksService : BaseHtmlScrapingService<ClosestEateryRequest, ClosestEateryResponse>
     {
-        public override GetEateriesResponse Execute(GetEateriesRequest request)
+        public override ClosestEateryResponse Execute(ClosestEateryRequest request)
         {
             
             var encodedPostcode = request.Command.Postcode.Replace(" ", string.Empty);
@@ -19,7 +16,7 @@ namespace GroundJobs.ServiceBus.Services
             storesData.Wait();
             var stores = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(storesData.Result);
 
-            return new GetEateriesResponse
+            return new ClosestEateryResponse
             {
                 LocationName = stores.store.name.ToString(),
                 Distance = float.Parse(stores.distance.ToString())
