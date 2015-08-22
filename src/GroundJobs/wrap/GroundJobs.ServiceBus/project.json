@@ -6,6 +6,10 @@
       "bin": {
         "assembly": "../../GroundJobs.ServiceBus/obj/{configuration}/GroundJobs.ServiceBus.dll",
         "pdb": "../../GroundJobs.ServiceBus/obj/{configuration}/GroundJobs.ServiceBus.pdb"
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "6.0.8",
+        "RestSharp": "105.1.0"
       }
     },
     "net452": {
