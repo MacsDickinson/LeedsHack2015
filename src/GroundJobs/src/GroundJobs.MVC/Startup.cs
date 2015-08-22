@@ -76,6 +76,18 @@ namespace GroundJobs.MVC
                 options.ClientSecret = Configuration["Authentication:MicrosoftAccount:ClientSecret"];
             });
 
+            services.Configure<GoogleAuthenticationOptions>(options =>
+            {
+                options.ClientId = Configuration["Authentication:Google:ClientId"];
+                options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+            });
+
+            services.Configure<TwitterAuthenticationOptions>(options =>
+            {
+                options.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
+                options.ConsumerSecret = Configuration["Authentication:Twitter:ConsumerSecret"];
+            });
+
             // Add MVC services to the services container.
             services.AddMvc();
 
@@ -119,9 +131,9 @@ namespace GroundJobs.MVC
             // Add authentication middleware to the request pipeline. You can configure options such as Id and Secret in the ConfigureServices method.
             // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
             app.UseFacebookAuthentication();
-            // app.UseGoogleAuthentication();
-            app.UseMicrosoftAccountAuthentication();
-            // app.UseTwitterAuthentication();
+            //app.UseGoogleAuthentication();
+            //app.UseMicrosoftAccountAuthentication();
+            app.UseTwitterAuthentication();
 
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
