@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GroundJobs.ServiceBus
 {
@@ -8,15 +10,27 @@ namespace GroundJobs.ServiceBus
     {
         public static readonly ServiceBus Instance = new ServiceBus();
 
-        public void Publish<T>(ICommand<T> command)
+        public void Publish<T>(T command) where T : ICommand
         {
-            command.Execute();
+            var handlerTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes().Where(t => t.GetInterfaces().Contains(typeof(ICommandHandler<T>))));
 
-            OnCommandComplete(Instance, new CommandEventArgs { Command = command});
+            var handlers = handlerTypes.Select(t => (ICommandHandler<T>)Activator.CreateInstance(t));
+
+            foreach (var handler in handlers)
+            {
+                handler.Execute(command);
+            }
+
+            OnCommandComplete?.Invoke(Instance, new CommandEventArgs { Command = command });
         }
 
         public delegate void CommandComplete(CommandEventArgs e);
         public event EventHandler<CommandEventArgs> OnCommandComplete;
+    }
+
+    public interface ICommandHandler<in T> where T : ICommand
+    {
+        void Execute(T command);
     }
 
     public class CommandEventArgs : EventArgs
@@ -24,9 +38,7 @@ namespace GroundJobs.ServiceBus
         public object Command;
     }
 
-    public interface ICommand<T>
+    public interface ICommand
     {
-        T Data { get; set; }
-        void Execute();
     }
 }
