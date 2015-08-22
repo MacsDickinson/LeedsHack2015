@@ -8,7 +8,7 @@ namespace GroundJobs.Services.FoodServices
     {
         public EateryResult Aggregate(IEnumerable<ClosestEateryResponse> responses)
         {
-            var result = responses.OrderByDescending(r => r.Distance).First();
+            var result = responses.OrderBy(r => r.Distance).First();
             return new EateryResult { Distance = result.Distance, LocationName = result.LocationName};
         }
     }

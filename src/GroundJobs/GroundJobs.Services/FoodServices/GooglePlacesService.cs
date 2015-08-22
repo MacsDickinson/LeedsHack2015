@@ -1,8 +1,22 @@
-﻿namespace GroundJobs.Services.FoodServices
+﻿using System;
+using GroundJobs.ServiceBus;
+
+namespace GroundJobs.Services.FoodServices
 {
-    public class GooglePlacesService : BaseHtmlScrapingService<ClosestGooglePlaceRequest, ClosestEateryResponse>
+    public class GooglePlacesService : BaseHtmlScrapingService<ClosestGooglePlaceRequest, ClosestEateryResponse>, 
+        IService<ClosestEateryRequest, ClosestEateryResponse>
     {
+        public ClosestEateryResponse Execute(ClosestEateryRequest request)
+        {
+            return ExecuteGooglePlaceRequest(new ClosestGooglePlaceRequest {Command = request.Command, Type = EateryType.cafe});
+        }
+
         public override ClosestEateryResponse Execute(ClosestGooglePlaceRequest request)
+        {
+            return ExecuteGooglePlaceRequest(request);
+        }
+
+        private static ClosestEateryResponse ExecuteGooglePlaceRequest(ClosestGooglePlaceRequest request)
         {
             var encodedPostcode = request.Command.Postcode.Replace(" ", string.Empty);
             var postcodeData = GetHTMLString($"http://api.postcodes.io/postcodes/{encodedPostcode}");
