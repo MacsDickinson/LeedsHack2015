@@ -24,8 +24,9 @@ namespace GroundJobs.ServiceBus
         public object Command;
     }
 
-    public interface ICommand<in T>
+    public interface ICommand<T>
     {
-        void Execute(T data);
+        T Data { get; set; }
+        void Execute();
     }
 }
