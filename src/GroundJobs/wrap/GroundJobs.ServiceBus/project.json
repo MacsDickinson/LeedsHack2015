@@ -7,6 +7,13 @@
         "assembly": "../../GroundJobs.ServiceBus/obj/{configuration}/GroundJobs.ServiceBus.dll",
         "pdb": "../../GroundJobs.ServiceBus/obj/{configuration}/GroundJobs.ServiceBus.pdb"
       }
+    },
+    "net452": {
+      "wrappedProject": "../../GroundJobs.ServiceBus/GroundJobs.ServiceBus.csproj",
+      "bin": {
+        "assembly": "../../GroundJobs.ServiceBus/obj/{configuration}/GroundJobs.ServiceBus.dll",
+        "pdb": "../../GroundJobs.ServiceBus/obj/{configuration}/GroundJobs.ServiceBus.pdb"
+      }
     }
   }
 }

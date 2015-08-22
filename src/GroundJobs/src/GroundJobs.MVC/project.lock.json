@@ -6494,7 +6494,9 @@
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta5",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta5"
     ],
-    "DNX,Version=v4.5.1": [],
+    "DNX,Version=v4.5.1": [
+      "GroundJobs.ServiceBus >= 1.0.0-*"
+    ],
     "DNXCore,Version=v5.0": []
   }
 }
