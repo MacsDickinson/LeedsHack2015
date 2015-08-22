@@ -5,5 +5,7 @@ namespace GroundJobs.ServiceBus.Services
         public PostCodeSearchCommand Command { get; private set; }
         public float Distance;
         public string LocationName;
+        public string Latitude;
+        public string Longitude;
     }
 }
