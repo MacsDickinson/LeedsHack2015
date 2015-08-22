@@ -3,20 +3,9 @@ using GroundJobs.ServiceBus;
 
 namespace GroundJobs.Services.FoodServices
 {
-    public class GooglePlacesService : BaseHtmlScrapingService<ClosestGooglePlaceRequest, ClosestEateryResponse>, 
-        IService<ClosestEateryRequest, ClosestEateryResponse>
+    public class GooglePlacesService : BaseHtmlScrapingService<ClosestGooglePlaceRequest, ClosestGooglePlaceResponse>
     {
-        public ClosestEateryResponse Execute(ClosestEateryRequest request)
-        {
-            return ExecuteGooglePlaceRequest(new ClosestGooglePlaceRequest {Command = request.Command, Type = EateryType.cafe});
-        }
-
-        public override ClosestEateryResponse Execute(ClosestGooglePlaceRequest request)
-        {
-            return ExecuteGooglePlaceRequest(request);
-        }
-
-        private static ClosestEateryResponse ExecuteGooglePlaceRequest(ClosestGooglePlaceRequest request)
+        public override ClosestGooglePlaceResponse Execute(ClosestGooglePlaceRequest request)
         {
             var encodedPostcode = request.Command.Postcode.Replace(" ", string.Empty);
             var postcodeData = GetHTMLString($"http://api.postcodes.io/postcodes/{encodedPostcode}");
@@ -30,16 +19,44 @@ namespace GroundJobs.Services.FoodServices
             storesData.Wait();
             var googlePlaces = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(storesData.Result);
 
-            if (googlePlaces.results.Count <= 0) return new ClosestEateryResponse();
+            if (googlePlaces.results.Count <= 0) return default(ClosestGooglePlaceResponse);
 
-            var closestEatery = new ClosestEateryResponse
+            var closestPlace = new ClosestGooglePlaceResponse
             {
                 LocationName = googlePlaces.results[0].name.ToString(),
                 Latitude = float.Parse(googlePlaces.results[0].geometry.location.lat.ToString()),
                 Longitude = float.Parse(googlePlaces.results[0].geometry.location.lng.ToString()),
             };
-            closestEatery.SetDistanceFrom(latitude, longitude);
-            return closestEatery;
+            closestPlace.SetDistanceFrom(latitude, longitude);
+            return closestPlace;
+        }
+    }
+
+    public class ClosestGooglePlaceResponse : IServiceResponse<PostCodeSearchCommand>
+    {
+        public PostCodeSearchCommand Command { get; }
+        public float Latitude;
+        public float Longitude;
+        public float Distance;
+        public string LocationName;
+
+        public void SetDistanceFrom(float latitude, float longitude)
+        {
+            var EarthRadius = 6371; // Radius of the earth in km
+            var dLat = DegreeToRadius(latitude - Latitude);
+            var dLon = DegreeToRadius(longitude - Longitude);
+            var a =
+                Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                Math.Cos(DegreeToRadius(Latitude)) * Math.Cos(DegreeToRadius(latitude)) *
+                Math.Sin(dLon / 2) * Math.Sin(dLon / 2)
+                ;
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+            Distance = (float)(EarthRadius * c); // Distance in km
+        }
+
+        private double DegreeToRadius(float degree)
+        {
+            return degree * (Math.PI / 180);
         }
     }
 }
