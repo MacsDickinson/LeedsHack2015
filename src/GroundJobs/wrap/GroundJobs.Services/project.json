@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../GroundJobs.Services/GroundJobs.Services.csproj",
+      "bin": {
+        "assembly": "../../GroundJobs.Services/obj/{configuration}/GroundJobs.Services.dll",
+        "pdb": "../../GroundJobs.Services/obj/{configuration}/GroundJobs.Services.pdb"
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "7.0.1",
+        "GroundJobs.ServiceBus": "1.0.0-*"
+      }
+    }
+  }
+}
