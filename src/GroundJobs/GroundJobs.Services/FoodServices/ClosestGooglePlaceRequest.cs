@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +9,57 @@ namespace GroundJobs.Services.FoodServices
 {
     public class ClosestGooglePlaceRequest : ClosestEateryRequest
     {
-        public EateryType Type { get; set; }
+        public string APIKey { get; set; }
+        public List<EateryType> Types { get; set; }
         public string Name { get; set; }
+        public string PostCode { get; set; }
+        public float Latitude { get; set; }
+        public float Longitude { get; set; }
+
+        public List<ClosestGooglePlaceResponse> Get()
+        {
+            var closestPlaces = new List<ClosestGooglePlaceResponse>();
+
+            if (!string.IsNullOrEmpty(PostCode))
+            {
+                var postcodeData = GetResponseString($"http://api.postcodes.io/postcodes/{PostCode}");
+                postcodeData.Wait();
+                var postcode = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(postcodeData.Result);
+
+                Latitude = float.Parse(postcode.result.latitude.ToString());
+                Longitude = float.Parse(postcode.result.longitude.ToString());
+            }
+
+            var types = Types.Aggregate("", (current, type) => current + (type + "|"));
+
+            var googlePlacesResponse = GetResponseString($"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={Latitude},{Longitude}&radius=500&types={types}&name={Name}&key={APIKey}");
+            googlePlacesResponse.Wait();
+            var googlePlaces = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(googlePlacesResponse.Result);
+
+            if (googlePlaces.results.Count <= 0) return closestPlaces;
+
+            foreach (var googlePlace in googlePlaces.results)
+            {
+                var closestPlace = new ClosestGooglePlaceResponse
+                {
+                    LocationName = googlePlace.name?.ToString(),
+                    Latitude = float.Parse(googlePlace.geometry.location.lat.ToString()),
+                    Longitude = float.Parse(googlePlace.geometry.location.lng.ToString()),
+                };
+                closestPlace.SetDistanceFrom(Latitude, Longitude);
+
+                closestPlaces.Add(closestPlace);
+            }
+
+            return closestPlaces;
+        }
+        private static async Task<string> GetResponseString(string url)
+        {
+            var client = new HttpClient() { MaxResponseContentBufferSize = 1000000 };
+            return await client.GetStringAsync(url);
+        }
     }
+
     public enum EateryType
     {
         accounting,
@@ -111,4 +160,5 @@ namespace GroundJobs.Services.FoodServices
         zoo,
     }
 
+    
 }
