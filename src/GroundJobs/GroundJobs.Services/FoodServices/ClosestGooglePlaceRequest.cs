@@ -52,6 +52,9 @@ namespace GroundJobs.Services.FoodServices
                     Name = googlePlace.name?.ToString(),
                     Latitude = float.Parse(googlePlace.geometry.location.lat.ToString()),
                     Longitude = float.Parse(googlePlace.geometry.location.lng.ToString()),
+                    Icon = googlePlace.icon?.ToString(),
+                    Vicinity = googlePlace.vicinity?.ToString(),
+                    Rating = googlePlace.rating?.ToString(),
                 };
                 closestPlace.SetDistanceFrom(Latitude, Longitude);
 

@@ -12,6 +12,7 @@ namespace GroundJobs.Services.FoodServices
         public string Name;
         public string Icon;
         public string Vicinity;
+        public string Rating;
 
         public void SetDistanceFrom(float latitude, float longitude)
         {
