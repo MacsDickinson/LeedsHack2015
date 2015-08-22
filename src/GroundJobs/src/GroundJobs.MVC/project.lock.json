@@ -2905,12 +2905,12 @@
           "Microsoft.AspNet.FileProviders.Physical": "1.0.0-beta5",
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5",
           "Microsoft.AspNet.PageExecutionInstrumentation.Interfaces": "1.0.0-beta5",
-          "System.Reflection.Extensions": "4.0.0-beta-23015",
-          "System.Runtime.InteropServices": "4.0.20-beta-23015",
-          "System.Threading": "4.0.10-beta-23015",
-          "System.Net.Sockets": "4.0.10-beta-23015",
-          "System.Collections": "4.0.10-beta-23015",
-          "Microsoft.Win32.Registry": "4.0.0-beta-23015"
+          "System.Reflection.Extensions": "4.0.0-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Threading": "4.0.10-beta-23019",
+          "System.Net.Sockets": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "Microsoft.Win32.Registry": "4.0.0-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
@@ -4918,7 +4918,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc3": {
-      "sha512": "+IAgIbixhE1YdjviBfJhQ8oS9Xc+gYabKYJi5T46RnhCtC67ZQ133ebrnLLpocx2DfTPx4GdNkGt+XRfFbcF5Q==",
+      "sha512": "K+Vgi95hm/sorMO3M4JybasGbNv2ISDJMMFZsObSlozOK2maJosyLMQWAo0ZmJaqKd43CPzwhQB3MZMh6Hfnpw==",
       "files": [
         "Microsoft.CodeAnalysis.Analyzers.1.0.0-rc3.nupkg",
         "Microsoft.CodeAnalysis.Analyzers.1.0.0-rc3.nupkg.sha512",
@@ -4933,7 +4933,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Common/1.0.0-rc3": {
-      "sha512": "7EdIn8+hBhoTnrosydREV22RZmqB5jDFfNSjlpsrV9S1BSJtRPhhKdt2aAgIF0K6grsdlsP8j+UFxpEHKNDWvQ==",
+      "sha512": "sON3pTdJhYzdn/LQ8bak9dNqR3EE+4FzOdxaX0lG6z4vdi0PYRZRtd5ezkdZq/mb9QIf4HFQgT7wAxd0Qzx1Eg==",
       "files": [
         "Microsoft.CodeAnalysis.Common.1.0.0-rc3.nupkg",
         "Microsoft.CodeAnalysis.Common.1.0.0-rc3.nupkg.sha512",
@@ -4946,7 +4946,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.CSharp/1.0.0-rc3": {
-      "sha512": "zG7yPqO6BDq6pPOg0pno8MV7ijiFuYMh6rETuSFp0p9nVWRhoVaVj4sgTVZ3dYyRQqiaSVAeEvOk0vLyCPCLMA==",
+      "sha512": "HA7zSHvHhc6E0uG87EAglgCMAqrRdgK3BYHVoOA0ZPoQ/V60FtU3/w599uQ/QsJ09ufMwP6CvFp0m3IBiM/GTw==",
       "files": [
         "Microsoft.CodeAnalysis.CSharp.1.0.0-rc3.nupkg",
         "Microsoft.CodeAnalysis.CSharp.1.0.0-rc3.nupkg.sha512",
@@ -4959,7 +4959,7 @@
       ]
     },
     "Microsoft.CSharp/4.0.0-beta-23019": {
-      "sha512": "wp5SlNCIXAFqPbWMOAD8eedaPA1vPyBSh6P/OZUaSab4ogrFdElpHVoW+wTicbXLVJcvQwp1Jtk9xP5Slmq4EA==",
+      "sha512": "TsYR8ylpBw89cxCTzA9eD8wqLR5u4TnNvUCLU7Qt9TlbxmNM0jPaz80L4N+W81kEoOpchlckGGCTA4JVemmEVA==",
       "files": [
         "Microsoft.CSharp.4.0.0-beta-23019.nupkg",
         "Microsoft.CSharp.4.0.0-beta-23019.nupkg.sha512",
@@ -5365,7 +5365,7 @@
       ]
     },
     "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-beta5": {
-      "sha512": "O4S+wvsm7j0/JbsP7Ol1cg99qPOXt4c2UMdegdZUKkQBxu0dMooWdHRoLQM+MJi/DP3YrEVLjRK8NXjZpZSEIg==",
+      "sha512": "qKyw00koXSuLRKI+GOkdHn9FyuE21R93GZyWmVJZYXg4scb2ki3NlGT954mEVxx5WN4yqRqywe2Rc+4MSqbq1w==",
       "files": [
         "Microsoft.VisualStudio.Web.BrowserLink.Loader.14.0.0-beta5.nupkg",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader.14.0.0-beta5.nupkg.sha512",
@@ -5498,7 +5498,7 @@
       ]
     },
     "System.ComponentModel.Annotations/4.0.10-beta-23019": {
-      "sha512": "F2CrYTQL0Ue64ELVPHGAAvmVavOl4SO9FFhJQyyQ3zaoR7K8EeqgqucW5gkHB7w5aNaWfx1qh1pggQ2Y4kq7Fw==",
+      "sha512": "gRl64wBSg0jiwi/vPJodVVW/mLGUg9a/1ZiP3yU4tK16b1tAp9HxUOd2TOJurUH/s+6bsKCpXpcAYeUFKD7LeA==",
       "files": [
         "System.ComponentModel.Annotations.4.0.10-beta-23019.nupkg",
         "System.ComponentModel.Annotations.4.0.10-beta-23019.nupkg.sha512",
@@ -5522,7 +5522,7 @@
       ]
     },
     "System.ComponentModel.Primitives/4.0.0-beta-23019": {
-      "sha512": "Zw1d9So3GX6MuxyPbgPeWVSuWk58LKh6UXPMllgmJlypo2E8DIOrFbbM7t7eMVBtSfly3SVoFKFSD1iRJHAP/Q==",
+      "sha512": "v0WwDBhUd7P+4vF+25CdVJ4lN8SFDyOySZhLDJNtuCOcHwAD9V243xRUKNzqsurqPgLSjTuyaZOUBM+7xJtDKw==",
       "files": [
         "System.ComponentModel.Primitives.4.0.0-beta-23019.nupkg",
         "System.ComponentModel.Primitives.4.0.0-beta-23019.nupkg.sha512",
@@ -5534,7 +5534,7 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.0.0-beta-23019": {
-      "sha512": "g8x8k21xJt4fNal4CpEwqvBeoq14oePfhJtKeEoHyQEjrS6OAsTMpEBPArrZV55zgYEeQLa9xxowjoIPhJvTuQ==",
+      "sha512": "Zg559RZvMFuB/qgwIAmX/oX7l9z3/CVS6Aw0gAkhIeLFlkP/X91haIBjaJ39g78vOmDl/9EoZ/cDxQRgCpP9jg==",
       "files": [
         "System.ComponentModel.TypeConverter.4.0.0-beta-23019.nupkg",
         "System.ComponentModel.TypeConverter.4.0.0-beta-23019.nupkg.sha512",
@@ -5558,7 +5558,7 @@
       ]
     },
     "System.Data.Common/4.0.0-beta-23019": {
-      "sha512": "1o8nnn6VSx1GAEfUAMIOreWbXHPPcVjvWQp4swCDBX70KM5ouv/dzmEUR//uQyVtaLOlypNFhHs12e/1sswDlA==",
+      "sha512": "1nc7TbNJsrVZ8DAj0SF2H1dcwXI766dBVIIWYF3tHKMJYkWUzDGHJRQeSBobwriMBoGOO7EgHRf02/N93Uhe0g==",
       "files": [
         "System.Data.Common.4.0.0-beta-23019.nupkg",
         "System.Data.Common.4.0.0-beta-23019.nupkg.sha512",
@@ -5570,7 +5570,7 @@
       ]
     },
     "System.Data.SqlClient/4.0.0-beta-23019": {
-      "sha512": "8NgjVIsR3165uFAu+tPlpZ8uoL14RVLV7o+YZUIBQbiKVZ+3Y8wMd+HiBMo30rbkFsOYabkCgXn6Jc26RbAIvQ==",
+      "sha512": "HGwJpSecJGvv7s10rtf/quUGTUoelHmp/YHWcbs7rXe/G7gzGQiuaTsFf4vO2PGSyk1gO2gFyBTwcC8ST4Iivg==",
       "files": [
         "runtime.json",
         "System.Data.SqlClient.4.0.0-beta-23019.nupkg",
@@ -5669,7 +5669,7 @@
       ]
     },
     "System.Dynamic.Runtime/4.0.10-beta-23019": {
-      "sha512": "yhXko8+R8fy0RERn6xQltYEhChBNyGEQgntwjHqNBc3x1M7wvg+Ye72Bh1QVQfnMIXZ0tG8XSrQs8hJe8KjYjg==",
+      "sha512": "zq+wmgZ+VG2EL5WOnkHn5hB7BM1eYJjK2C7qcxXdamFn8Cj7rxhy6teckGeL5gNx1UAnPyIEGit56sxuw1ti/A==",
       "files": [
         "runtime.json",
         "System.Dynamic.Runtime.4.0.10-beta-23019.nupkg",
@@ -5738,7 +5738,7 @@
       ]
     },
     "System.IO.Compression/4.0.0-beta-23019": {
-      "sha512": "WpKuk7P9BIdyWYoslAahQJtyaMgCMZZx7MF+VeuUZaiLtvKR9c5Sx3rXviDpVzAQH7/6yuuu+FNP/k+546Qd5g==",
+      "sha512": "sc9LskbuP6P8pt5nLmNBKnn8sErHfAbzd19sAKy1Qz4rHx+q0nkn5nE/cAvdMstZj9st8H17KVvPFbNF49Z3Gw==",
       "files": [
         "runtime.json",
         "System.IO.Compression.4.0.0-beta-23019.nupkg",
@@ -5823,7 +5823,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.0-beta-23019": {
-      "sha512": "4pDZlRUuUxNRnX5hgq2+d2+4W8HeIizIhZRJuGn/iEEn9SBpsC19Rv2BCzKpETbLWNcTD5PBYM4iECRVeA80ZA==",
+      "sha512": "IL/eoEGttmBF22hbDSHFCqJd8N6p2ZGYUzbNO98nkLKL0LMP3l29bEwxI9zQIsADn+CHjQbsNVNAMq6UUFb86A==",
       "files": [
         "System.Linq.Queryable.4.0.0-beta-23019.nupkg",
         "System.Linq.Queryable.4.0.0-beta-23019.nupkg.sha512",
@@ -5839,7 +5839,7 @@
       ]
     },
     "System.Net.Http/4.0.0-beta-23019": {
-      "sha512": "8mt4X1eIjTMrKVINJuzuFYf7C4GrYFC+tlvc2zH5HtxKPpbFZamMUdJ19ORxZ9ds053aqQASdiha7eH86PN+eg==",
+      "sha512": "Z0FOEd5NsFPmU8pfWWdaNu2efWEfBjtjml7TG/kptpGeD7XhvhkVPlhItCX1c8Jnl74qJxdSnxKN03qtmu1KJg==",
       "files": [
         "System.Net.Http.4.0.0-beta-23019.nupkg",
         "System.Net.Http.4.0.0-beta-23019.nupkg.sha512",
@@ -5855,7 +5855,7 @@
       ]
     },
     "System.Net.Http.WinHttpHandler/4.0.0-beta-23019": {
-      "sha512": "C6DBRXVzX3+bkWVlUdMVqHMgIiKbZJU6E08R/rSVENmVTGHxQ9NgSwA8yBCreOeV4hcdHIa187kjFA0X6BYSRA==",
+      "sha512": "ORrNgvxNdECk79Af/X5BG6EHcP7iclmS9c4uxKxRyArwjU73KO5oHzEtWEN65GRetUuohHAZc9AWs382LcTFUQ==",
       "files": [
         "System.Net.Http.WinHttpHandler.4.0.0-beta-23019.nupkg",
         "System.Net.Http.WinHttpHandler.4.0.0-beta-23019.nupkg.sha512",
@@ -5889,7 +5889,7 @@
       ]
     },
     "System.Net.Sockets/4.0.10-beta-23019": {
-      "sha512": "4NWuSdsFSf21iJkd+NQaE2OwtNaKGdXIbBbQmfE43evHl6fUII38wwNnooWtF0avCEyU6BOdUTiwoZAUZyQwcA==",
+      "sha512": "0MSBoU0yMV1K4e2QmrAzm1KDI3AtQTbXnDCKUUWN7Ynk8uyGHix66E0FjWo+8JlfB0X9ba6Keh3yG6JhUkGUJg==",
       "files": [
         "System.Net.Sockets.4.0.10-beta-23019.nupkg",
         "System.Net.Sockets.4.0.10-beta-23019.nupkg.sha512",
@@ -5911,7 +5911,7 @@
       ]
     },
     "System.ObjectModel/4.0.10-beta-23019": {
-      "sha512": "sJ+7kgWoTs4d8eNlhJB/p1Uq2iWHYVxO7ALNpB3sTwh3LORqwwPZe5FbSweccA3seM+zLSYa2AqBGp69JOXbcA==",
+      "sha512": "xG9aUQ0QLcA1uJdiEZmkAuXnMg7/cZB9fc8S+zgNTkbfOdjXMITcmmT9RTMkNrTQBO7rjLMZAMMDvihxi3Htiw==",
       "files": [
         "System.ObjectModel.4.0.10-beta-23019.nupkg",
         "System.ObjectModel.4.0.10-beta-23019.nupkg.sha512",
@@ -6137,7 +6137,7 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.0.10-beta-23019": {
-      "sha512": "txtdLZ+b8B5/YIDthLTS4IUkt/pgl/RYIoLwp5ZEJ2dxurzkB99dOOIPFvkWoe3WJF7XWVSgmSZTO/VOvR6UlA==",
+      "sha512": "jeTQMwyVycrbjeh0IYoyra218EqNKcNZKYRh6tGPepIodOK5XXjbBJWNXFQCJygWcOBMfO1fSjjLzDTC+K49QA==",
       "files": [
         "System.Runtime.Serialization.Primitives.4.0.10-beta-23019.nupkg",
         "System.Runtime.Serialization.Primitives.4.0.10-beta-23019.nupkg.sha512",
@@ -6185,7 +6185,7 @@
       ]
     },
     "System.Security.Cryptography.Encryption.Aes/4.0.0-beta-23019": {
-      "sha512": "X3lDbzONEsSurqDDApxmA/ybdViY5F1XAWoGV+B8ZlDKOsSiEbBwsPt8MShROlCkPZezUyRpLzg2b8Jd+anIRQ==",
+      "sha512": "on/qzSYxncp6LENpMGjbKNnDQeLI4kXBoNH/Mts2c1LahuUpBM9RvDkCzQKn2HfazOJXwW/n0L7H5EYvAV3uww==",
       "files": [
         "System.Security.Cryptography.Encryption.Aes.4.0.0-beta-23019.nupkg",
         "System.Security.Cryptography.Encryption.Aes.4.0.0-beta-23019.nupkg.sha512",
@@ -6311,7 +6311,7 @@
       ]
     },
     "System.Text.Encoding.CodePages/4.0.0-beta-23019": {
-      "sha512": "g0lWYGITectCuzFwzH1fuWHAHGmHQO8B3FrU1gUvR8DYAgxxRwbQa1jg2XJs+wzeo2KWwuvPXwXif5v4JpLXkw==",
+      "sha512": "CcSCJIvJxZSfWN/5CucmfKVAlKJ28qRwZpbj3sNDR4BHlw15rPjeuN2pdYJ0u6Xjb2YCnDJPZY2Oblb/LJx4ng==",
       "files": [
         "System.Text.Encoding.CodePages.4.0.0-beta-23019.nupkg",
         "System.Text.Encoding.CodePages.4.0.0-beta-23019.nupkg.sha512",
@@ -6388,7 +6388,7 @@
       ]
     },
     "System.Threading.Tasks.Parallel/4.0.0-beta-23019": {
-      "sha512": "1UwVjFyi1BGUTxAZj++MtFCzG4Wf9ks79h4D9QgJZnklHxRpKgfVuoDFAlid6PoyBs644Z3iXh30x8/+sAvHlw==",
+      "sha512": "lMP3s9qa284MBbXPd8oWydD0s0JKSluiL7s9Bhkg3udSF8WZGdGfFEEKcCBhHFlpOQkQUvgaBs0B7AOp9Fn2dg==",
       "files": [
         "System.Threading.Tasks.Parallel.4.0.0-beta-23019.nupkg",
         "System.Threading.Tasks.Parallel.4.0.0-beta-23019.nupkg.sha512",
@@ -6445,7 +6445,7 @@
       ]
     },
     "System.Xml.ReaderWriter/4.0.10-beta-23019": {
-      "sha512": "+LIgVOFuU13Dx093QI+OljBhDH6AhqNJcI84qJ/sjakbmGQwf/3RAv4R9cC2D3UF2JhdoVRuelhb5Yzh2+EUTA==",
+      "sha512": "5Xcofhb4yCBW/a0CFrcMId3MqVslXUYERvacUA1jioTuq3HfSeiPFiFhhvRUpy1poBBdh6BklQx2b5XYIeidwQ==",
       "files": [
         "System.Xml.ReaderWriter.4.0.10-beta-23019.nupkg",
         "System.Xml.ReaderWriter.4.0.10-beta-23019.nupkg.sha512",
@@ -6457,7 +6457,7 @@
       ]
     },
     "System.Xml.XDocument/4.0.10-beta-23019": {
-      "sha512": "pyyzY5FFoZziGVDFyO5VLM094cX7jNN+01EsSJEFreje5uzSz6aKwIPgTe/l2CFiXYFoUNr0O6D3GEc8jPmbPg==",
+      "sha512": "/K8VBdk862eJL+KduBOpIGSM46KfPRgzRl4phCImc7QtIET6dSYlgx7OKJDm9Rj57q2Kb2vN0LyC9zGyxXxuSA==",
       "files": [
         "System.Xml.XDocument.4.0.10-beta-23019.nupkg",
         "System.Xml.XDocument.4.0.10-beta-23019.nupkg.sha512",

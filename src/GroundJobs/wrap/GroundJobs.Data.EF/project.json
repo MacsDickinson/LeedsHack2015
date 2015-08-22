@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net452": {
+      "wrappedProject": "../../GroundJobs.Data.EF/GroundJobs.Data.EF.csproj",
+      "bin": {
+        "assembly": "../../GroundJobs.Data.EF/obj/{configuration}/GroundJobs.Data.EF.dll",
+        "pdb": "../../GroundJobs.Data.EF/obj/{configuration}/GroundJobs.Data.EF.pdb"
+      },
+      "dependencies": {
+        "EntityFramework": "6.1.3",
+        "GroundJobs.Data": "1.0.0-*"
+      }
+    }
+  }
+}

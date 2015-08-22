@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net452": {
+      "wrappedProject": "../../GroundJobs.Data/GroundJobs.Data.csproj",
+      "bin": {
+        "assembly": "../../GroundJobs.Data/obj/{configuration}/GroundJobs.Data.dll",
+        "pdb": "../../GroundJobs.Data/obj/{configuration}/GroundJobs.Data.pdb"
+      }
+    }
+  }
+}
