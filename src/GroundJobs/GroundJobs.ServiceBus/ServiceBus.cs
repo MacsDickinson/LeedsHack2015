@@ -28,14 +28,9 @@ namespace GroundJobs.ServiceBus
             where TServiceResponse : IServiceResponse<ICommand>
         {
             var aggregatorType = GetTypesImplementing(typeof (IServiceAggregation<TAggregation, TServiceResponse>)).Single();
-
             var aggregator = (IServiceAggregation<TAggregation, TServiceResponse>)Activator.CreateInstance(aggregatorType);
 
-            var serviceTypes = GetTypesImplementing(typeof (IService<TServiceRequest, TServiceResponse>));
-
-            var services = serviceTypes.Select(t => (IService<TServiceRequest, TServiceResponse>) Activator.CreateInstance(t));
-
-            var serviceTasks = services.Select(s => Task.Factory.StartNew(() =>
+            var serviceTasks = GetTypesImplementing(typeof(IService<TServiceRequest, TServiceResponse>)).Select(t => (IService<TServiceRequest, TServiceResponse>)Activator.CreateInstance(t)).Select(s => Task.Factory.StartNew(() =>
             {
                 try
                 {
